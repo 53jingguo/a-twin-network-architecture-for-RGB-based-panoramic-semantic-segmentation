@@ -3,7 +3,7 @@ import os
 import argparse
 
 from trainerst import Trainer
-parser = argparse.ArgumentParser(description="360 Degree Panorama Depth Estimation Training")
+parser = argparse.ArgumentParser(description="360 Degree Panorama semantic segmentation Training")
 
 # dataset
 parser.add_argument("--root", default="D:\Structured3D\\", type=str, help="path to the dataset.")
