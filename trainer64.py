@@ -48,7 +48,7 @@ class Trainer:
         self.val_loader = DataLoader(self.val_dataset, self.settings.batch_size_test, False,
                                      num_workers=self.settings.num_workers, pin_memory=True, drop_last=False)
         self.invalid_ids = []
-        self.label_weight = torch.load('G:/liujingguo/segmentation/networks/label13_weight.pth').float().to(self.device)
+        self.label_weight = torch.load('G:/segmentation/networks/label13_weight.pth').float().to(self.device)
         self.label_weight[self.invalid_ids] = 0
         self.label_weight *= (self.settings.num_classes - len(self.invalid_ids)) / self.label_weight.sum()
         self.colors = np.load('G:/Stanford2D3D_sem/colors.npy')
